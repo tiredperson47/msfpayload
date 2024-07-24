@@ -1,6 +1,6 @@
 #!/bin/bash
 
-options=('windows (exe)' 'linux (elf)' "php" "asp" "aspx" "war" "python" 'bash (sh)' "perl" "jsp" 'linux-bind' 'windows-bind' "cmd" "solaris" "mac" 'mac-bind')
+options=('windows (exe)' 'windows-bind' 'cmd' 'linux (elf)' 'linux-bind' 'bash (sh)' 'solaris' 'php' 'asp' 'aspx' 'war' 'python' 'perl' 'jsp' 'mac' 'mac-bind')
 
 for i in "${options[@]}"; do
 echo "$i"
