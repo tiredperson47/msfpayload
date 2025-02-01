@@ -80,7 +80,7 @@ echo "run" >> meta.rc
 echo 'Do you want to start metasploit multi/handler? (Y/N)'
 read choice
 if [[ "$choice" == "y" || "$choice" == "Y" ]]; then 
-        msfconsole -r meta.rc
+        rlwrap msfconsole -r meta.rc
 else 
         echo '================Exiting================'
         exit 1
